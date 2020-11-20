@@ -260,5 +260,10 @@ public class Datum {
                 '}' + "\n";
     }
 
-    //public static Comparator<Datum> byRank =(o1, o2) -> Integer.compare(o1.getRank(), o2.getRank());
+    public static Comparator<Datum> byRankDesc = (o1, o2) -> Integer.compare(o1.getRank(), o2.getRank());
+    public static Comparator<Datum> byRankAsc = (o2, o1) -> Integer.compare(o1.getRank(), o2.getRank());
+    public static Comparator<Datum> byPriceUSDDesc = Comparator.comparing(o -> o.getPriceUsd());
+    public static Comparator<Datum> byPriceUSDAsc = (o1, o2) -> o2.getPriceUsd().compareTo(o1.getPriceUsd());
+    public static Comparator<Datum> byPriceBtcDesc = Comparator.comparing(o -> o.getPriceBtc());
+    public static Comparator<Datum> byPriceBtcAsc = (o1, o2) -> o2.getPriceUsd().compareTo(o1.getPriceBtc());
 }

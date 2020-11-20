@@ -56,7 +56,6 @@ public class JSON_DATA {
         this.additionalProperties.put(name, value);
     }
 
-
     @Override
     public String toString() {
         return "JSON_DATA{" +
@@ -66,4 +65,14 @@ public class JSON_DATA {
                 '}' + "\n";
     }
 
+    public Datum filterByName(String name){
+        Datum datum = new Datum();
+        for (int i = 0; i < data.size(); i++){
+            if(data.get(i).getName().toLowerCase().contains(name.toLowerCase())){
+                return data.get(i);
+            }
+            datum = data.get(i);
+        }
+        return datum;
+    }
 }
